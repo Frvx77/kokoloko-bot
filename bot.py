@@ -8,7 +8,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 # Setup Permissions (Intents)
 intents = discord.Intents.default()
-intents.message_content = True # <--Let's the bot read the chat
+intents.message_content = True # <--Lets the bot read the chat
 
 # Create the Client
 client = discord.Client(intents=intents)
@@ -28,7 +28,7 @@ async def on_message(message):
 
     # Check for command
     if message.content.startswith('hola'):
-        await message.channel.send('Soy... KOKOLOKOOOO ¡Estoy vivooo!✋🤪🤚')
+        await message.channel.send("Soy... KOKOLOKOOOO ¡Estoy vivooo!✋🤪🤚")
 
 #Run it
 if TOKEN:
