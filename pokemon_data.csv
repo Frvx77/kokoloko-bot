@@ -59,7 +59,6 @@ Deoxys,240,N
 Dialga-O,240,N
 Flutter Mane,240,N
 Giratina,240,N
-Greninja-Ash,240,N
 Mega Absol Z,240,Y
 Mega Alakazam,240,Y
 Mega Blastoise,240,Y
@@ -187,7 +186,7 @@ Mega Skarmory,160,Y
 Ogerpon Heartflame,160,N
 Ogerpon Teal,160,N
 Primarina,160,N
-Quaquaval,160,N
+Quaquaval,180,N
 Rillaboom,160,N
 Rotom-Wash,160,N
 Salamence,160,N
@@ -295,7 +294,7 @@ Mega Dragalge,120,Y
 Mega Eelektross,120,Y
 Mega Emboar,120,Y
 Mega Froslass,120,Y
-Mega Heracross,120,Y
+Mega Heracross,140,Y
 Mega Pidgeot,120,Y
 Mega Slowbro,120,Y
 Mega Tatsugiri,120,Y
@@ -333,8 +332,8 @@ Alolan Muk,100,N
 Araquanid,100,N
 Arcanine,100,N
 Arctozolt,100,N
-Basculegion Female,100,N
-Basculegion Male,100,N
+Basculegion Female,200,N
+Basculegion Male,200,N
 Bewear,100,N
 Brambleghast,100,N
 Bronzong,100,N
@@ -343,7 +342,7 @@ Chansey,100,N
 Chesnaught,100,N
 Crawdaunt,100,N
 Crobat,100,N
-Cyclizar,100,N
+Cyclizar,200,N
 Dhelmise,100,N
 Ditto,100,N
 Doublade,100,N
@@ -363,7 +362,7 @@ Heliolisk,100,N
 Heracross,100,N
 Hisuian Lilligant,100,N
 Hisuian Typhlosion,100,N
-Houndstone,100,N
+Houndstone,200,N
 Indeedee Female,100,N
 Indeedee Male,100,N
 Inteleon,100,N
@@ -378,7 +377,7 @@ Mega Golurk,100,Y
 Mega Houndoom,100,Y
 Mega Meganium,100,Y
 Mega Pyroar,100,Y
-Mega Sceptile,100,Y
+Mega Sceptile,180,Y
 Mega Scolipede,100,Y
 Mega Scrafty,100,Y
 Mega Sharpedo,100,Y
@@ -392,7 +391,7 @@ Overqwil,100,N
 Paldean Tauros Aqua,100,N
 Paldean Tauros Blaze,100,N
 Pangoro,100,N
-Pawmot,100,N
+Pawmot,180,N
 Politoed,100,N
 Porygon-Z,100,N
 Porygon2,100,N
@@ -485,7 +484,7 @@ Minior,80,N
 Mismagius,80,N
 Omastar,80,N
 Oricorio Pom-Pom,80,N
-Orthworm,80,N
+Orthworm,180,N
 Paldean Tauros,80,N
 Pincurchin,80,N
 Poliwrath,80,N
@@ -495,7 +494,7 @@ Rhyperior,80,N
 Roserade,80,N
 Rotom-Fan,80,N
 Sandaconda,80,N
-Sceptile,80,N
+Sceptile,140,N
 Scrafty,80,N
 Seismitoad,80,N
 Sharpedo,80,N
@@ -611,7 +610,7 @@ Primeape,60,N
 Probopass,60,N
 Pyukumuku,60,N
 Qwilfish,60,N
-Rabsca,60,N
+Rabsca,140,N
 Raichu,60,N
 Rapidash,60,N
 Regirock,60,N
