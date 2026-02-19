@@ -1,8 +1,5 @@
 Name,Tier,Mega
 Arceus,300,N
-Arceus-Fairy,300,N
-Arceus-Ground,300,N
-Arceus-Water,300,N
 Calyrex-Shadow-Rider,300,N
 Eternatus,300,N
 Geox,300,N
@@ -23,13 +20,6 @@ Yveltal,300,N
 Zacian,300,N
 Zacian-Crowned,300,N
 Zygarde-Complete,300,N
-Arceus-Dark,260,N
-Arceus-Electric,260,N
-Arceus-Ghost,260,N
-Arceus-Ice,260,N
-Arceus-Poison,260,N
-Arceus-Rock,260,N
-Arceus-Steel,260,N
 Calyrex-Ice-Rider,260,N
 Deoxys-Attack,260,N
 Dialga,260,N
@@ -48,13 +38,6 @@ Rayquaza,260,N
 Reshiram,260,N
 Zamazenta,260,N
 Zekrom,260,N
-Arceus-Bug,240,N
-Arceus-Dragon,240,N
-Arceus-Fighting,240,N
-Arceus-Fire,240,N
-Arceus-Flying,240,N
-Arceus-Grass,240,N
-Arceus-Psychic,240,N
 Deoxys,240,N
 Dialga-O,240,N
 Flutter Mane,240,N
@@ -65,6 +48,7 @@ Mega Alakazam,240,Y
 Mega Blastoise,240,Y
 Mega Blaziken,240,Y
 Mega Greninja ,240,Y
+Mega Kangaskhan,240,Y
 Mega Latias,240,Y
 Mega Latios,240,Y
 Mega Lucario,240,Y
@@ -81,7 +65,7 @@ Iron Valiant,220,N
 Magearna,220,N
 Mega Gallade,220,Y
 Mega Garchomp Z,220,Y
-Mega Kangaskhan,220,Y
+Mega Lopunny,220,Y
 Mega Metagross,220,Y
 Mega Zeraora,220,Y
 Naganadel,220,N
@@ -89,7 +73,6 @@ Palafin,220,N
 Pheromosa,220,N
 Shaymin-Sky,220,N
 Spectrier,220,N
-Mega Starmie,260,Y
 Urshifu-Single-Strike,220,N
 Blaziken,200,N
 Chi-Yu,200,N
@@ -109,9 +92,9 @@ Latios,200,N
 Mega Baxcalibur,200,Y
 Mega Excadrill,200,Y
 Mega Gardevoir,200,Y
-Mega Lopunny,200,Y
 Mega Mawile,200,Y
 Mega Meowstic,200,Y
+Mega Starmie,200,Y
 Melmetal,200,N
 Meowscarada,200,N
 Roaring Moon,200,N
