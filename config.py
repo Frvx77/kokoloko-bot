@@ -58,3 +58,9 @@ STAFF_ROLE_NAME = "NPO-Draft Staff"
 # --- EASTER EGGS ---
 # 0.32 = 32% Chance for Hariyama Fake Out to trigger on the penultimate pick.
 FAKE_OUT_CHANCE = 0.32
+
+# ==========================================
+# 📝 LOGGING SETTINGS (NEW)
+# ==========================================
+LOG_FILE = 'kokoloko.log'  # The file where logs will be saved
+LOG_LEVEL = 'INFO'         # 'DEBUG' (very detailed), 'INFO' (normal), 'ERROR' (only crashes)

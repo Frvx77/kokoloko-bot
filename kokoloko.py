@@ -4,7 +4,22 @@ import config
 import logic
 import views
 import engine
+import logging
+import sys
 
+# ==========================================
+# 📝 MASTER LOGGING SETUP
+# ==========================================
+# This initializes the logging for the entire bot
+logging.basicConfig(
+    level=getattr(logging, config.LOG_LEVEL.upper(), logging.INFO),
+    format='%(asctime)s | %(levelname)-7s | %(name)-8s | %(message)s',
+    handlers=[
+        logging.FileHandler(config.LOG_FILE, encoding='utf-8'),
+        logging.StreamHandler(sys.stdout) # Also prints to your terminal
+    ]
+)
+logger = logging.getLogger("kokoloko")
 
 # ==========================================
 # TEST DUMMIES
@@ -29,14 +44,15 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 @bot.event
 async def on_ready():
     logic.load_data()
-    print(f'🤖 KOKOLOKO: {bot.user} is ready!')
-    print(f'   - Fake Out Chance: {config.FAKE_OUT_CHANCE * 100}%')
+    logger.info(f'🤖 KOKOLOKO: {bot.user} is ready and connected to Discord!')
+    logger.info(f'   - Fake Out Chance: {config.FAKE_OUT_CHANCE * 100}%')
 
 
 @bot.command()
 async def toggle_auto(ctx):
     """Command to cycle draft modes."""
     if not discord.utils.get(ctx.author.roles, name=config.STAFF_ROLE_NAME):
+        logger.warning(f"Unauthorized toggle_auto attempt by {ctx.author}")
         return await ctx.send("🚫 Staff only.")
 
     current = logic.draft_state.get("auto_mode", 0)
@@ -44,12 +60,14 @@ async def toggle_auto(ctx):
     logic.draft_state["auto_mode"] = new_mode
 
     modes = ["🔴 **INTERACTIVE**", "🟢 **AUTO PUBLIC**", "🤫 **AUTO SILENT**"]
+    logger.info(f"Mode switched by {ctx.author} to {modes[new_mode]}")
     await ctx.send(f"⚡ **Mode switched to:** {modes[new_mode]}")
 
 
 @bot.command()
 async def summary(ctx):
     """Command to show current draft state."""
+    logger.info(f"Summary requested by {ctx.author}")
     for embed in views.create_summary_embed(logic.draft_state):
         await ctx.send(embed=embed)
 
@@ -57,6 +75,7 @@ async def summary(ctx):
 @bot.command()
 async def start_draft(ctx, *members: discord.Member):
     """Main startup command."""
+    logger.info(f"Draft initiation started by {ctx.author}")
     real = list(members)
     final = []
 
@@ -66,35 +85,43 @@ async def start_draft(ctx, *members: discord.Member):
         v = views.DummyCheckView()
         m = await ctx.send(embed=e, view=v)
         await v.wait()
-        if v.value is None: return await m.edit(content="❌ Timeout", embed=None, view=None)
+        if v.value is None:
+            logger.info("Draft setup cancelled (Timeout on Dummies check).")
+            return await m.edit(content="❌ Timeout", embed=None, view=None)
         final = real + TEST_DUMMIES if v.value else real
     else:
         final = real
 
-    if not final: return await ctx.send("❌ No players!")
+    if not final:
+        logger.warning("Draft failed to start: No players provided.")
+        return await ctx.send("❌ No players!")
 
     # 2. Select Mode
     e = discord.Embed(title="🔧 Setup", description="Select Mode:", color=0x9b59b6)
     v = views.ModeSelectionView()
     m = await ctx.send(embed=e, view=v)
     await v.wait()
-    if v.value is None: return await m.edit(content="❌ Timeout", embed=None, view=None)
+    if v.value is None:
+        logger.info("Draft setup cancelled (Timeout on Mode select).")
+        return await m.edit(content="❌ Timeout", embed=None, view=None)
 
     # 3. Initialize
     logic.initialize_draft(final)
     logic.draft_state["auto_mode"] = v.value
+    logger.info(f"Draft initialized successfully. Mode: {v.value}, Players: {len(final)}")
 
     if v.value != 2:
         names = ", ".join([p.display_name for p in final])
         await ctx.send(f"🏆 **Draft Started!**\nOrder: {names}")
     else:
-        print("🏆 [SILENT] Started")
+        logger.info("🏆 [SILENT] Started")
 
     await engine.next_turn(ctx.channel, bot)
 
 
 if __name__ == "__main__":
     if config.TOKEN:
+        logger.info("Starting bot...")
         bot.run(config.TOKEN)
     else:
-        print("❌ Error: TOKEN missing in config.py")
+        logger.critical("TOKEN missing in config.py")
